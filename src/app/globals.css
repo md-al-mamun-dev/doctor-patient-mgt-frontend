@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+
+  --canvas: #F5F7F6;
+  --surface: #FFFFFF;
+  --surface-hover: #F8FAF9;
+  --surface-active: #EDF6F4;
+  --ink: #1B2723;
+  --muted: #5E6C67;
+  --line: #E1E7E4;
+
+  --brand-50: #EDF6F4;
+  --brand-100: #D3EBE6;
+  --brand-200: #A9D6CD;
+  --brand-500: #14897E;
+  --brand-600: #0E7369;
+  --brand-700: #0B5D55;
+  --brand-800: #0A4A44;
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Deep Medical Pine / Teal Theme */
+  --canvas: #0D1614;
+  --surface: #162420;
+  --surface-hover: #1C2E29;
+  --surface-active: #223731;
+  --ink: #ECF3F0;
+  --muted: #8DA19A;
+  --line: #223731;
+
+  --brand-50: #132E29;
+  --brand-100: #1B3E37;
+  --brand-200: #235249;
+  --brand-500: #14897E;
+  --brand-600: #189E92;
+  --brand-700: #38BDB0;
+  --brand-800: #5EEAD4;
+}
+
+@theme {
+  --font-sans: "Public Sans", "Public Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-active: var(--surface-active);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+::selection {
+  background-color: var(--color-brand-100);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Dark mode theme mappings for existing utility classes */
+.dark .bg-white {
+  background-color: var(--surface);
+}
+
+.dark .hover\:bg-white:hover {
+  background-color: var(--surface-hover);
+}
+
+.dark .bg-white\/90 {
+  background-color: color-mix(in srgb, var(--surface) 90%, transparent);
+}
+
+.dark .bg-white\/80 {
+  background-color: color-mix(in srgb, var(--surface) 80%, transparent);
+}
+
+.dark .shadow-xs,
+.dark .shadow-sm,
+.dark .shadow,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), 0 2px 6px -1px rgba(0, 0, 0, 0.35);
+}
+
+.dark .ring-black\/5,
+.dark .ring-black\/10,
+.dark .ring-black\/20 {
+  --tw-ring-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Status pills dark theme enhancements */
+.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #6EE7B7;
+}
+.dark .text-emerald-800 {
+  color: #6EE7B7;
+}
+
+.dark .bg-sky-50 {
+  background-color: rgba(14, 165, 233, 0.15);
+  color: #7DD3FC;
+}
+.dark .text-sky-800 {
+  color: #7DD3FC;
+}
+
+.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #FCD34D;
+}
+.dark .text-amber-800 {
+  color: #FCD34D;
+}
+
+.dark .bg-rose-50 {
+  background-color: rgba(244, 63, 94, 0.15);
+  color: #FDA4AF;
+}
+.dark .text-rose-800 {
+  color: #FDA4AF;
+}
+
+.dark .bg-slate-100 {
+  background-color: rgba(148, 163, 184, 0.15);
+  color: #94A3B8;
+}
+.dark .text-slate-600,
+.dark .text-slate-700 {
+  color: #94A3B8;
+}
+
+
+/* Debugging class */
+
+.marker-class {
+  border: 1px solid red;
+}
